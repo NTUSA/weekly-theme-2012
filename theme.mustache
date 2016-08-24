@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW">
+<head>
+	<meta charset="UTF-8">
+	<meta property="og:title" content="臺大學生週報 No.{{issue}}"/>
+	<title>臺大學生週報 No.{{issue}}</title>
+	<link rel="stylesheet" type="text/css" href="{{path}}/assets/styles.css" media="all">
+	<script type="text/javascript">
+	var _gaq = _gaq || []; _gaq.push(["_setAccount", "UA-35642989-1"]); _gaq.push(["_trackPageview"]); (function() { var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true; ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s); })();
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<div class="editor">
+				<img src="assets/editor.png" alt="臺大學生會新聞部" title="臺大學生會新聞部">
+			</div>
+			<div class="cover">
+				<img src="assets/cover.png" alt="臺大學生週報 Student Weekly" title="臺大學生週報 Student Weekly"/>
+			</div>
+			<div class="date_eps">
+				<span class="date">{{date}}</span>
+				<span class="eps">NO.{{issue}}</span>
+			</div>
+		</div>
+		<div class="content">
+{{#ntusa}}
+			<div class="box">
+				<div class="box_title">
+					<img src="assets/ntusa-black.png" alt="臺大學生會" title="臺大學生會">
+				</div>
+	{{#item}}
+				<div class="section small">
+					<a target="_blank" href="{{url}}">
+						<img class="article_cover" src="{{image_url}}">
+						<div class="article">
+							<h1>{{name}}</h1>
+							<p>{{& content}}</p>
+							<div class="author">
+								<img class="author_from">
+								<span class="author_name">{{provider_name}}</span>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</a>
+				</div>
+	{{/item}}
+{{/ntusa}}
+{{#articles}}
+			<div class="box">
+				<div class="box_title">
+					<img src="assets/stararticle-black.png" alt="文章精選" title="文章精選">
+				</div>
+	{{#item}}
+				<div class="section small">
+					<a target="_blank" href="{{url}}">
+						<img class="article_cover" src="{{image_url}}">
+						<div class="article">
+							<h1>{{name}}</h1>
+							<p>{{& content}}</p>
+							<div class="author">
+								<img class="author_from" src="{{provider_icon}}">
+								<span class="author_name"></span>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</a>
+				</div>
+	{{/item}}
+			</div>
+{{/articles}}
+		</div>
+		<!-- end of content -->
+		<div class="footer">
+			<a target="_blank" href="https://ntustudents.org"><img src="assets/ntusa.png" alt="臺大學生會"></a>
+			<a target="_blank" href="https://issuu.com/ntusparks"><img src="assets/ntusparks.png" alt="花火時代"></a>
+			<a target="_blank" class="designer" href="http://about.me/kytu"><img src="assets/designer.png" alt="designed by kytu"></a>
+			<a target="_blank" href="https://ntustudents.org/soapbox/"><img src="assets/soapbox.png" alt="Soapbox"/></a>
+		</div>
+	</div>
+</body>
+</html>
