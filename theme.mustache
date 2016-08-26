@@ -10,6 +10,60 @@
 	</script>
 </head>
 <body>
+{{#email}}
+	<div class="wrapper" style="border: 1px #ccc solid">
+		<div class="header" style="background-color: #252525;text-align: center;padding: 30px 0 5px 0">
+			<div class="editor"><img src="{{path}}/assets/editor.png" alt="臺大學生會新聞部" title="臺大學生會新聞部"></div>
+			<div class="cover"><img src="{{path}}/assets/cover.png" alt="臺大學生週報 Student Weekly" title="臺大學生週報 Student Weekly"></div>
+			<div class="date_eps" style="text-align: right;color: white"><span class="date">{{date}}</span> <span class="eps">NO.{{issue}}</span></div>
+		</div>
+		<div class="content">
+	{{#ntusa}}
+			<div class="box">
+				<div class="box_title" style="background-color: #ccc;text-align: center;padding: 10px"><img src="{{path}}/assets/ntusa-black.png" alt="臺大學生會" title="臺大學生會"></div>
+		{{#item}}
+				<div class="section small" style="padding: 10px;text-align: center">
+					<div class="article">
+						<h3 style="padding: 10px;background-color: #252525;color: white">{{ name }}</h3>
+						<img class="article_cover" src="{{image_url}}" alt="">
+						<p style="text-align: left;color: #555">{{& content}}</p>
+						<div class="author" style="text-align: right;color: #2D7EEB">
+							<span class="author_name">{{provider_name}}</span><br><br>
+							<a target="_blank" href="{{url}}" style="color: #104285;font-size: 25px;font-weight: bold"><img width="134px" src="{{path}}/assets/continue.png" alt="繼續閱讀"></a>
+						</div>
+					</div>
+				</div>
+		{{/item}}
+			</div>
+	{{/ntusa}}
+	{{#articles}}
+			<div class="box">
+				<div class="box_title" style="background-color: #ccc;text-align: center;padding: 10px"><img src="{{path}}/assets/stararticle-black.png" alt="文章精選" title="文章精選"></div>
+		{{#item}}
+				<div class="section small" style="padding: 10px;text-align: center">
+					<div class="article">
+						<h3 style="padding: 10px;background-color: #252525;color: white">{{name}}</h3>
+						<img class="article_cover" src="{{image_url}}" alt="">
+						<p style="text-align: left;color: #555">{{& content}}</p>
+						<div class="author" style="text-align: right;color: #2D7EEB">
+							<img class="author_from" width="35px" src="{{provider_icon}}" alt="{{provider_name}}"><br><br><br>
+							<a target="_blank" href="{{url}}" style="color: #104285;font-size: 25px;font-weight: bold"><img width="134px" src="{{path}}/assets/continue.png" alt="繼續閱讀"></a>
+						</div>
+					</div>
+				</div>
+		{{/item}}
+			</div>
+	{{/articles}}
+		</div>
+		<div class="footer" style="background-color: #252525;text-align: center;padding: 30px 0 5px 0">
+			<a target="_blank" href="https://ntustudents.org"><img src="{{path}}/assets/ntusa.png" alt="臺大學生會"></a>
+			<a target="_blank" href="https://issuu.com/ntusparks"><img src="{{path}}/assets/ntusparks.png" alt="花火時代"></a>
+			<a target="_blank" href="https://ntustudents.org/soapbox/"><img src="{{path}}/assets/soapbox.png" alt="Soapbox"></a>
+			<div class="designer" style="text-align: right;padding-right: 10px"><a target="_blank" href="http://kytu.cc/works"><img src="{{path}}/assets/designer.png" alt="kytu.cc"></a></div>
+		</div>
+	</div>
+{{/email}}
+{{^email}}
 	<div class="wrapper">
 		<div class="header">
 			<div class="editor">
@@ -24,12 +78,12 @@
 			</div>
 		</div>
 		<div class="content">
-{{#ntusa}}
+	{{#ntusa}}
 			<div class="box">
 				<div class="box_title">
 					<img src="{{path}}/assets/ntusa-black.png" alt="臺大學生會" title="臺大學生會">
 				</div>
-	{{#item}}
+		{{#item}}
 				<div class="section small">
 					<a target="_blank" href="{{url}}">
 						<img class="article_cover" src="{{image_url}}">
@@ -44,14 +98,14 @@
 						<div class="clear"></div>
 					</a>
 				</div>
-	{{/item}}
-{{/ntusa}}
-{{#articles}}
+		{{/item}}
+	{{/ntusa}}
+	{{#articles}}
 			<div class="box">
 				<div class="box_title">
 					<img src="{{path}}/assets/stararticle-black.png" alt="文章精選" title="文章精選">
 				</div>
-	{{#item}}
+		{{#item}}
 				<div class="section small">
 					<a target="_blank" href="{{url}}">
 						<img class="article_cover" src="{{image_url}}">
@@ -66,9 +120,9 @@
 						<div class="clear"></div>
 					</a>
 				</div>
-	{{/item}}
+		{{/item}}
 			</div>
-{{/articles}}
+	{{/articles}}
 		</div>
 		<!-- end of content -->
 		<div class="footer">
@@ -78,5 +132,6 @@
 			<a target="_blank" href="https://ntustudents.org/soapbox/"><img src="{{path}}/assets/soapbox.png" alt="Soapbox"/></a>
 		</div>
 	</div>
+{{/email}}
 </body>
 </html>
