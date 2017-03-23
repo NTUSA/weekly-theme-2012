@@ -2,5 +2,9 @@
     "name": "“2012”",
     "author": "Kytu",
     "description": "傳統的學生週報範本主題，於第二十五屆開始使用。",
-    "thumbnail": "https://ntusa.github.io/weekly-theme-2012/thumbnail.png"
+    "thumbnail": "https://ntusa.github.io/weekly-theme-2012/thumbnail.png",
+    "layouts": {
+        "ntusa": "固定專欄（臺大學生會）",
+        "articles": "固定專欄（文章精選）"
+    }
 }
